@@ -1,6 +1,23 @@
 @import "tailwindcss";
 
+@theme {
+  --color-accent: #a78bfa;
+  --color-accent-hover: #c4b5fd;
+  --color-surface: #0a0a0a;
+  --color-surface-light: #141414;
+  --color-surface-border: #1f1f1f;
+  --color-muted: #737373;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
+}
+
+.font-display {
+  font-family: var(--font-display), system-ui, sans-serif;
 }
