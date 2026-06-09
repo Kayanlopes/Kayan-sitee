@@ -5,6 +5,7 @@ export default function Home() {
     <>
       {/* FIRST SECTION */}
       <section className="relative min-h-[695px] w-full overflow-hidden px-14 pt-14 pb-14 flex flex-col">
+        <div className="hero-dots" />
         {/* NAV */}
         <nav className="flex items-center justify-end gap-2">
           <a
