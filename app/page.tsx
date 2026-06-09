@@ -3,10 +3,12 @@ import SplashScreen from "./components/SplashScreen";
 import InteractiveGridPattern from "./components/InteractiveGridPattern";
 import HoverBorderGradient from "./components/HoverBorderGradient";
 import NoiseBackground from "./components/NoiseBackground";
+import FollowingPointer from "./components/FollowingPointer";
 
 export default function Home() {
   return (
     <>
+      <FollowingPointer />
       <SplashScreen />
       {/* FIRST SECTION */}
       <section className="relative min-h-[695px] w-full overflow-visible px-14 pt-14 pb-14 flex flex-col">
