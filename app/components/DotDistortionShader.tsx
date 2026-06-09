@@ -69,11 +69,13 @@ export default function DotDistortionShader() {
 
     function onMouseMove(e: MouseEvent) {
       const rect = canvas!.getBoundingClientRect();
-      mouse = { x: e.clientX - rect.left, y: e.clientY - rect.top };
-    }
-
-    function onMouseLeave() {
-      mouse = { x: -9999, y: -9999 };
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
+        mouse = { x, y };
+      } else {
+        mouse = { x: -9999, y: -9999 };
+      }
     }
 
     function draw() {
@@ -164,23 +166,21 @@ export default function DotDistortionShader() {
     ro.observe(canvas);
     resize();
 
-    canvas.addEventListener("mousemove", onMouseMove);
-    canvas.addEventListener("mouseleave", onMouseLeave);
+    window.addEventListener("mousemove", onMouseMove);
 
     rafId = requestAnimationFrame(draw);
 
     return () => {
       cancelAnimationFrame(rafId);
       ro.disconnect();
-      canvas.removeEventListener("mousemove", onMouseMove);
-      canvas.removeEventListener("mouseleave", onMouseLeave);
+      window.removeEventListener("mousemove", onMouseMove);
     };
   }, []);
 
   return (
     <canvas
       ref={canvasRef}
-      style={{ position: "absolute", inset: 0, width: "100%", height: "100%", zIndex: 0, pointerEvents: "auto" }}
+      style={{ position: "absolute", inset: 0, width: "100%", height: "100%", zIndex: 0, pointerEvents: "none" }}
     />
   );
 }

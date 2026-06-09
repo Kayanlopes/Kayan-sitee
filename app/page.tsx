@@ -8,16 +8,16 @@ export default function Home() {
     <>
       <SplashScreen />
       {/* FIRST SECTION */}
-      <section className="relative min-h-[695px] w-full overflow-hidden px-14 pt-14 pb-14 flex flex-col">
+      <section className="relative min-h-[695px] w-full overflow-visible px-14 pt-14 pb-14 flex flex-col">
         <DotDistortionShader />
 
         {/* DECORATIVE LINES */}
-        <div className="absolute left-8 top-0 w-px h-full bg-[#fa7548] opacity-30 pointer-events-none" />
-        <div className="absolute right-8 top-0 w-px h-full bg-[#fa7548] opacity-30 pointer-events-none" />
-        <div className="absolute top-[30px] left-1/2 -translate-x-1/2 h-px bg-[#fa7548] opacity-30 pointer-events-none" style={{ width: "calc(100% - 64px)" }} />
+        <div className="absolute left-8 top-0 w-px pointer-events-none" style={{ height: "100vh", backgroundColor: "rgba(255,255,255,0.08)" }} />
+        <div className="absolute right-8 top-0 w-px pointer-events-none" style={{ height: "100vh", backgroundColor: "rgba(255,255,255,0.08)" }} />
+        <div className="absolute top-[30px] left-8 right-8 h-px pointer-events-none" style={{ backgroundColor: "rgba(255,255,255,0.08)" }} />
 
         {/* NAV */}
-        <nav className="flex items-center justify-start gap-2">
+        <nav className="relative z-10 flex items-center justify-start gap-2">
           <a
             href="#projetos"
             className="font-overused text-[16px] leading-[18px] text-[#fa7548] border border-[#fa7548] rounded-full px-3 py-2 hover:bg-[#fa7548]/10 transition-colors"
@@ -39,7 +39,7 @@ export default function Home() {
         </nav>
 
         {/* HERO CONTENT */}
-        <div className="flex flex-1 items-end justify-center gap-10">
+        <div className="relative z-10 flex flex-1 items-end justify-center gap-10">
           {/* LEFT: Headline + CTA */}
           <div className="flex-1 flex flex-col gap-8">
             <h1 className="text-[40px] leading-[1.214] tracking-tight">
