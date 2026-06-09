@@ -12,7 +12,7 @@ export default function Home() {
       <FollowingPointer />
       <SplashScreen />
       {/* FIRST SECTION */}
-      <section className="relative min-h-[695px] w-full overflow-visible px-14 pt-14 pb-14 flex flex-col">
+      <section className="relative h-screen w-full overflow-visible px-14 pt-14 pb-14 flex flex-col">
         <InteractiveGridPattern />
 
         {/* DECORATIVE LINES */}

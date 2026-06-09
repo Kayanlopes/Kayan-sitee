@@ -35,7 +35,8 @@ const CARDS = [
 ];
 
 const N = CARDS.length;
-const STICKY_TOP = 80;
+const CARD_HEIGHT = 400;
+const STICKY_TOP = `calc(50vh - ${CARD_HEIGHT / 2}px)`;
 const SCALE_STEP = 0.03;
 const Y_STEP = 15;
 const OPACITY_STEP = 0.15;
