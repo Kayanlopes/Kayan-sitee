@@ -1,18 +1,5 @@
 @import "tailwindcss";
 
-@theme {
-  --color-accent: #a78bfa;
-  --color-accent-hover: #c4b5fd;
-  --color-surface: #0a0a0a;
-  --color-surface-light: #141414;
-  --color-surface-border: #1f1f1f;
-  --color-muted: #737373;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -20,6 +7,17 @@ body {
   color: #ffffff;
 }
 
-.font-display {
-  font-family: var(--font-display), system-ui, sans-serif;
+.font-overused {
+  font-family: 'Overused Grotesk', system-ui, sans-serif;
+}
+
+.font-poppins {
+  font-family: var(--font-poppins), 'Poppins', system-ui, sans-serif;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #8f8f8f, #404040);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
