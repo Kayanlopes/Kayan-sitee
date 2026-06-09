@@ -1,7 +1,8 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
 import SplashScreen from "./components/SplashScreen";
 import InteractiveGridPattern from "./components/InteractiveGridPattern";
 import HoverBorderGradient from "./components/HoverBorderGradient";
+import NoiseBackground from "./components/NoiseBackground";
 
 export default function Home() {
   return (
@@ -72,18 +73,34 @@ export default function Home() {
             </HoverBorderGradient>
           </div>
 
-          {/* RIGHT: Projetos facilitados */}
+          {/* RIGHT: Project card */}
           <div className="shrink-0 flex flex-col gap-2.5 items-start justify-center">
             <p className="font-poppins font-semibold text-[28.768px] leading-[0.81] text-[#b9b9b9]">
               Projetos<br />facilitados
             </p>
-            <div className="w-[253px] h-[253px] rounded-lg overflow-hidden bg-[#1e1e1e]">
+            <NoiseBackground
+              containerClassName="w-[253px]"
+              gradientColors={["#fa7548", "#7c3aed", "#1e1e1e"]}
+              noiseIntensity={0.15}
+            >
               <img
                 src="https://www.figma.com/api/mcp/asset/ec7c10c6-d453-4ca0-827b-eba08b93230b"
-                alt="Projetos facilitados"
-                className="w-full h-full object-cover"
+                alt="Webbie RH"
+                className="w-full h-[190px] object-cover"
               />
-            </div>
+              <div className="flex items-center justify-between px-3 py-2.5">
+                <span className="font-overused font-semibold text-[14px] text-white">
+                  Webbie RH
+                </span>
+                <a
+                  href="#"
+                  className="flex items-center gap-1.5 border border-[#878787] rounded-full px-2.5 py-1 text-[12px] text-[#b9b9b9] hover:border-white hover:text-white transition-colors"
+                >
+                  Ver projeto
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+            </NoiseBackground>
           </div>
         </div>
       </section>
