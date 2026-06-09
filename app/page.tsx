@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import SplashScreen from "./components/SplashScreen";
+import DotDistortionShader from "./components/DotDistortionShader";
 
 export default function Home() {
   return (
@@ -7,7 +8,7 @@ export default function Home() {
       <SplashScreen />
       {/* FIRST SECTION */}
       <section className="relative min-h-[695px] w-full overflow-hidden px-14 pt-14 pb-14 flex flex-col">
-        <div className="hero-dots" />
+        <DotDistortionShader />
         {/* NAV */}
         <nav className="flex items-center justify-end gap-2">
           <a

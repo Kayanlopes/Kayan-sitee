@@ -15,17 +15,6 @@ body {
   font-family: var(--font-poppins), 'Poppins', system-ui, sans-serif;
 }
 
-.hero-dots {
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle, #8d8d8d 1px, transparent 1px);
-  background-size: 12px 12px;
-  opacity: 0.5;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0) 100%);
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0) 100%);
-  pointer-events: none;
-}
-
 .text-gradient {
   background: linear-gradient(to right, #8f8f8f, #404040);
   -webkit-background-clip: text;
