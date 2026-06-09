@@ -9,8 +9,14 @@ export default function Home() {
       {/* FIRST SECTION */}
       <section className="relative min-h-[695px] w-full overflow-hidden px-14 pt-14 pb-14 flex flex-col">
         <DotDistortionShader />
+
+        {/* DECORATIVE LINES */}
+        <div className="absolute left-8 top-0 w-px h-full bg-[#fa7548] opacity-30 pointer-events-none" />
+        <div className="absolute right-8 top-0 w-px h-full bg-[#fa7548] opacity-30 pointer-events-none" />
+        <div className="absolute top-[30px] left-1/2 -translate-x-1/2 h-px bg-[#fa7548] opacity-30 pointer-events-none" style={{ width: "calc(100% - 64px)" }} />
+
         {/* NAV */}
-        <nav className="flex items-center justify-end gap-2">
+        <nav className="flex items-center justify-start gap-2">
           <a
             href="#projetos"
             className="font-overused text-[16px] leading-[18px] text-[#fa7548] border border-[#fa7548] rounded-full px-3 py-2 hover:bg-[#fa7548]/10 transition-colors"
