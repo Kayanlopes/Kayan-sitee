@@ -7,6 +7,7 @@ import NoiseBackground from "./components/NoiseBackground";
 import FollowingPointer from "./components/FollowingPointer";
 import StackedCards from "./components/StackedCards";
 import TextAnimate from "./components/TextAnimate";
+import TextGenerateEffect from "./components/TextGenerateEffect";
 
 export default function Home() {
   return (
@@ -157,6 +158,82 @@ export default function Home() {
       </section>
 
       <StackedCards />
+
+      {/* SOBRE */}
+      <section id="sobre" className="relative w-full bg-[#0a0a0a] py-[120px] px-14">
+        <div className="flex gap-10 items-start">
+          {/* LEFT: sticky video */}
+          <div className="shrink-0" style={{ position: "sticky", top: "calc(50vh - 240px)" }}>
+            <video
+              src="/about-video.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="aspect-square w-[480px] max-w-[480px] rounded-2xl object-cover"
+            />
+          </div>
+
+          {/* RIGHT: text content */}
+          <div className="flex-1 flex flex-col">
+            <div className="mb-6">
+              <TextGenerateEffect
+                text="Sobre"
+                className="font-poppins font-semibold text-[24px] text-[#b9b9b9]"
+              />
+            </div>
+
+            {/* Parágrafo 1 */}
+            <p className="font-overused text-[18px] text-[#b9b9b9] leading-relaxed text-justify mb-6">
+              <TextAnimate text="Olá! Meu nome é Kayan, Sou" delay={0} staggerDelay={0.03} />
+              {" "}
+              <TextAnimate text="Product Designer" delay={0.18} staggerDelay={0.03} className="font-bold text-white" />
+              {" "}
+              <TextAnimate
+                text="com experiência na criação e evolução de produtos digitais, atuando desde a descoberta do problema até a entrega da solução. Trabalho com Product Discovery, UX Research, jornadas, prototipação e Design Systems para transformar necessidades dos usuários e objetivos de negócio em experiências simples, consistentes e escaláveis."
+                delay={0.24}
+                staggerDelay={0.03}
+              />
+            </p>
+
+            {/* Parágrafo 2 */}
+            <p className="font-overused text-[18px] text-[#b9b9b9] leading-relaxed text-justify">
+              <TextAnimate
+                text="Gosto de resolver problemas complexos, colaborar com times multidisciplinares e tomar decisões baseadas em evidências. Já contribuí para projetos de alto impacto, incluindo uma solução voltada à mitigação de um prejuízo anual estimado em"
+                delay={0}
+                staggerDelay={0.03}
+              />
+              {" "}
+              <TextAnimate text="R$ 20 milhões" delay={1.02} staggerDelay={0.03} className="font-bold text-[#fa7548]" />
+              {" "}
+              <TextAnimate text="e uma automação que" delay={1.11} staggerDelay={0.03} />
+              {" "}
+              <TextAnimate text="reduziu em 67%" delay={1.23} staggerDelay={0.03} className="font-bold text-[#fa7548]" />
+              {" "}
+              <TextAnimate text="o tempo de documentação de bugs." delay={1.32} staggerDelay={0.03} />
+            </p>
+
+            {/* CTA */}
+            <div className="mt-8">
+              <HoverBorderGradient
+                as="a"
+                href="https://wa.me/554898674784?text=Ol%C3%A1%20Kayan,%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
+                target="_blank"
+                rel="noopener noreferrer"
+                containerClassName="w-[230px]"
+                className="gap-2.5 pl-6 pr-1 py-1"
+              >
+                <span className="font-overused text-[16px] leading-[24px] text-[#b9b9b9] flex-1">
+                  Entre em contato
+                </span>
+                <span className="bg-[#1e1e1e] rounded-full p-[6.4px] flex items-center justify-center">
+                  <ArrowUpRight className="w-[19.2px] h-[19.2px] text-[#b9b9b9]" />
+                </span>
+              </HoverBorderGradient>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
