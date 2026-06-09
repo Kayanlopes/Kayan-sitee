@@ -1,8 +1,10 @@
 import { ArrowUpRight } from "lucide-react";
+import SplashScreen from "./components/SplashScreen";
 
 export default function Home() {
   return (
     <>
+      <SplashScreen />
       {/* FIRST SECTION */}
       <section className="relative min-h-[695px] w-full overflow-hidden px-14 pt-14 pb-14 flex flex-col">
         <div className="hero-dots" />
