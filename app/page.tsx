@@ -170,24 +170,24 @@ export default function Home() {
               muted
               loop
               playsInline
-              className="aspect-square w-[480px] max-w-[480px] rounded-2xl object-cover"
+              className="w-[492px] h-[492px] rounded-2xl object-cover"
             />
           </div>
 
           {/* RIGHT: text content */}
           <div className="flex-1 flex flex-col">
-            <div className="mb-6">
+            <div className="mb-[29px]">
               <TextGenerateEffect
                 text="Sobre"
-                className="font-poppins font-semibold text-[24px] text-[#b9b9b9]"
+                className="font-poppins font-light text-[40px] leading-[121%] text-[#8d8d8d]"
               />
             </div>
 
             {/* Parágrafo 1 */}
-            <p className="font-overused text-[18px] text-[#b9b9b9] leading-relaxed text-justify mb-6">
+            <p className="font-poppins font-light text-[32px] text-[#8d8d8d] leading-[121%] text-justify mb-[39px]">
               <TextAnimate text="Olá! Meu nome é Kayan, Sou" delay={0} staggerDelay={0.03} />
               {" "}
-              <TextAnimate text="Product Designer" delay={0.18} staggerDelay={0.03} className="font-bold text-white" />
+              <TextAnimate text="Product Designer" delay={0.18} staggerDelay={0.03} className="font-semibold" />
               {" "}
               <TextAnimate
                 text="com experiência na criação e evolução de produtos digitais, atuando desde a descoberta do problema até a entrega da solução. Trabalho com Product Discovery, UX Research, jornadas, prototipação e Design Systems para transformar necessidades dos usuários e objetivos de negócio em experiências simples, consistentes e escaláveis."
@@ -197,24 +197,24 @@ export default function Home() {
             </p>
 
             {/* Parágrafo 2 */}
-            <p className="font-overused text-[18px] text-[#b9b9b9] leading-relaxed text-justify">
+            <p className="font-poppins font-light text-[32px] text-[#8d8d8d] leading-[121%] text-justify">
               <TextAnimate
                 text="Gosto de resolver problemas complexos, colaborar com times multidisciplinares e tomar decisões baseadas em evidências. Já contribuí para projetos de alto impacto, incluindo uma solução voltada à mitigação de um prejuízo anual estimado em"
                 delay={0}
                 staggerDelay={0.03}
               />
               {" "}
-              <TextAnimate text="R$ 20 milhões" delay={1.02} staggerDelay={0.03} className="font-bold text-[#fa7548]" />
+              <TextAnimate text="R$ 20 milhões" delay={1.02} staggerDelay={0.03} className="font-semibold" />
               {" "}
               <TextAnimate text="e uma automação que" delay={1.11} staggerDelay={0.03} />
               {" "}
-              <TextAnimate text="reduziu em 67%" delay={1.23} staggerDelay={0.03} className="font-bold text-[#fa7548]" />
+              <TextAnimate text="reduziu em 67%" delay={1.23} staggerDelay={0.03} className="font-semibold" />
               {" "}
               <TextAnimate text="o tempo de documentação de bugs." delay={1.32} staggerDelay={0.03} />
             </p>
 
             {/* CTA */}
-            <div className="mt-8">
+            <div className="mt-[29px]">
               <HoverBorderGradient
                 as="a"
                 href="https://wa.me/554898674784?text=Ol%C3%A1%20Kayan,%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
