@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import SplashScreen from "./components/SplashScreen";
-import DotDistortionShader from "./components/DotDistortionShader";
+import InteractiveGridPattern from "./components/InteractiveGridPattern";
 import HoverBorderGradient from "./components/HoverBorderGradient";
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
       <SplashScreen />
       {/* FIRST SECTION */}
       <section className="relative min-h-[695px] w-full overflow-visible px-14 pt-14 pb-14 flex flex-col">
-        <DotDistortionShader />
+        <InteractiveGridPattern />
 
         {/* DECORATIVE LINES */}
         <div className="absolute left-8 top-0 w-px pointer-events-none" style={{ height: "100vh", backgroundColor: "rgba(255,255,255,0.08)" }} />
