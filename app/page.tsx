@@ -1,4 +1,4 @@
-import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowUpRight, ExternalLink, Linkedin, MessageCircle } from "lucide-react";
 import SplashScreen from "./components/SplashScreen";
 import InteractiveGridPattern from "./components/InteractiveGridPattern";
 import HoverBorderGradient from "./components/HoverBorderGradient";
@@ -21,25 +21,52 @@ export default function Home() {
         <div className="absolute top-[30px] left-8 right-8 h-px pointer-events-none" style={{ backgroundColor: "rgba(255,255,255,0.08)" }} />
 
         {/* NAV */}
-        <nav className="relative z-10 flex items-center justify-start gap-2">
-          <a
-            href="#projetos"
-            className="font-overused text-[16px] leading-[18px] text-[#fa7548] border border-[#fa7548] rounded-full px-3 py-2 hover:bg-[#fa7548]/10 transition-colors"
-          >
-            Projetos
-          </a>
-          <a
-            href="#sobre"
-            className="font-overused text-[16px] leading-[18px] text-[#b9b9b9] border border-[#878787] rounded-full px-3 py-2 hover:text-white hover:border-white transition-colors"
-          >
-            Sobre
-          </a>
-          <a
-            href="#contato"
-            className="font-overused text-[16px] leading-[18px] text-[#b9b9b9] border border-[#878787] rounded-full px-3 py-2 hover:text-white hover:border-white transition-colors"
-          >
-            Contato
-          </a>
+        <nav className="relative z-10 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <a
+              href="#projetos"
+              className="font-overused text-[16px] leading-[18px] text-[#fa7548] border border-[#fa7548] rounded-full px-3 py-2 hover:bg-[#fa7548]/10 transition-colors"
+            >
+              Projetos
+            </a>
+            <a
+              href="#sobre"
+              className="font-overused text-[16px] leading-[18px] text-[#b9b9b9] border border-[#878787] rounded-full px-3 py-2 hover:text-white hover:border-white transition-colors"
+            >
+              Sobre
+            </a>
+            <a
+              href="#contato"
+              className="font-overused text-[16px] leading-[18px] text-[#b9b9b9] border border-[#878787] rounded-full px-3 py-2 hover:text-white hover:border-white transition-colors"
+            >
+              Contato
+            </a>
+          </div>
+          <div className="flex items-center gap-2 ml-auto">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/avatar.png"
+              alt="Kayan Cassariego"
+              className="w-8 h-8 rounded-full object-cover"
+            />
+            <span className="font-overused text-[16px] text-[#b9b9b9]">Product Designer Pleno</span>
+            <a
+              href="https://www.linkedin.com/in/kayan-cassariego-ux-ui-product-designer/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#b9b9b9] hover:text-[#fa7548] transition-colors"
+            >
+              <Linkedin className="w-4 h-4" />
+            </a>
+            <a
+              href="https://wa.me/554898674784?text=Ol%C3%A1%20Kayan,%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#b9b9b9] hover:text-[#fa7548] transition-colors"
+            >
+              <MessageCircle className="w-4 h-4" />
+            </a>
+          </div>
         </nav>
 
         {/* HERO CONTENT */}
@@ -63,7 +90,9 @@ export default function Home() {
 
             <HoverBorderGradient
               as="a"
-              href="#contato"
+              href="https://wa.me/554898674784?text=Ol%C3%A1%20Kayan,%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
+              target="_blank"
+              rel="noopener noreferrer"
               containerClassName="w-[230px]"
               className="gap-2.5 pl-6 pr-1 py-1"
             >
