@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import SplashScreen from "./components/SplashScreen";
 import DotDistortionShader from "./components/DotDistortionShader";
+import HoverBorderGradient from "./components/HoverBorderGradient";
 
 export default function Home() {
   return (
@@ -56,17 +57,19 @@ export default function Home() {
               </span>
             </h1>
 
-            <a
+            <HoverBorderGradient
+              as="a"
               href="#contato"
-              className="inline-flex items-center gap-2.5 w-[230px] border border-[#fa7548] rounded-full pl-6 pr-1 py-1 hover:bg-[#fa7548]/10 transition-colors group"
+              containerClassName="w-[230px]"
+              className="gap-2.5 pl-6 pr-1 py-1"
             >
               <span className="font-overused text-[16px] leading-[24px] text-[#b9b9b9] flex-1">
                 Entre em contato
               </span>
-              <span className="bg-[#1e1e1e] rounded-full p-[6.4px] flex items-center justify-center group-hover:bg-[#fa7548]/20 transition-colors">
+              <span className="bg-[#1e1e1e] rounded-full p-[6.4px] flex items-center justify-center">
                 <ArrowUpRight className="w-[19.2px] h-[19.2px] text-[#b9b9b9]" />
               </span>
-            </a>
+            </HoverBorderGradient>
           </div>
 
           {/* RIGHT: Projetos facilitados */}
