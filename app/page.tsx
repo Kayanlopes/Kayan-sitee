@@ -6,6 +6,7 @@ import HoverBorderGradient from "./components/HoverBorderGradient";
 import NoiseBackground from "./components/NoiseBackground";
 import FollowingPointer from "./components/FollowingPointer";
 import StackedCards from "./components/StackedCards";
+import TextAnimate from "./components/TextAnimate";
 
 export default function Home() {
   return (
@@ -81,16 +82,28 @@ export default function Home() {
           <div className="flex-1 flex flex-col gap-8">
             <h1 className="text-[40px] leading-[1.214] tracking-tight">
               <span className="flex items-center gap-3">
-                <span className="font-poppins font-extrabold text-[#fa7548]">Transformando</span>
-                <span className="font-poppins font-semibold text-gradient">produtos</span>
+                <span className="font-poppins font-extrabold text-[#fa7548]">
+                  <TextAnimate text="Transformando" delay={1.8} />
+                </span>
+                <span className="font-poppins font-semibold text-gradient">
+                  <TextAnimate text="produtos" delay={1.85} />
+                </span>
               </span>
               <span className="flex items-center gap-[7px]">
-                <span className="font-poppins font-extrabold text-[#fa7548]">complexos</span>
-                <span className="font-poppins font-semibold text-gradient">em experiências claras,</span>
+                <span className="font-poppins font-extrabold text-[#fa7548]">
+                  <TextAnimate text="complexos" delay={1.9} />
+                </span>
+                <span className="font-poppins font-semibold text-gradient">
+                  <TextAnimate text="em experiências claras," delay={1.95} />
+                </span>
               </span>
               <span className="flex items-center gap-2">
-                <span className="font-poppins font-extrabold text-[#fa7548]">funcionais</span>
-                <span className="font-poppins font-semibold text-gradient">e escaláveis.</span>
+                <span className="font-poppins font-extrabold text-[#fa7548]">
+                  <TextAnimate text="funcionais" delay={2.1} />
+                </span>
+                <span className="font-poppins font-semibold text-gradient">
+                  <TextAnimate text="e escaláveis." delay={2.15} />
+                </span>
               </span>
             </h1>
 
