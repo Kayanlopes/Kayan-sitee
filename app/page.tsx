@@ -4,6 +4,7 @@ import InteractiveGridPattern from "./components/InteractiveGridPattern";
 import HoverBorderGradient from "./components/HoverBorderGradient";
 import NoiseBackground from "./components/NoiseBackground";
 import FollowingPointer from "./components/FollowingPointer";
+import StackedCards from "./components/StackedCards";
 
 export default function Home() {
   return (
@@ -106,6 +107,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <StackedCards />
     </>
   );
 }
