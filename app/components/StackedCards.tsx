@@ -168,6 +168,8 @@ export default function StackedCards() {
       className="relative bg-[#0a0a0a] mt-[100px]"
       style={{ height: `${N * 100}vh` }}
     >
+      <div className="dots-bg absolute inset-0 pointer-events-none" />
+
       {CARDS.map((card, i) => (
         <CardItem key={i} card={card} index={i} scrollYProgress={scrollYProgress} />
       ))}

@@ -97,14 +97,7 @@ export default function TestimonialsSection() {
   return (
     <section id="depoimentos" className="relative w-full overflow-hidden bg-[#0a0a0a] py-[120px] px-14">
       {/* DOT PATTERN */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: "radial-gradient(rgba(255,255,255,1) 1px, transparent 1px)",
-          backgroundSize: "24px 24px",
-          opacity: 0.1,
-        }}
-      />
+      <div className="dots-bg absolute inset-0 pointer-events-none" />
 
       <div className="relative mx-auto flex min-h-[600px] max-w-[1200px] items-center justify-center md:min-h-[700px]">
         {/* TITLE */}

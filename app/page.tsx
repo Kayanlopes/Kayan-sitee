@@ -165,7 +165,9 @@ export default function Home() {
 
       {/* SOBRE */}
       <section id="sobre" className="relative w-full bg-[#0a0a0a] py-[120px] px-14">
-        <div className="flex gap-[56px] items-start max-w-[1200px] mx-auto">
+        <div className="dots-bg absolute inset-0 pointer-events-none" />
+
+        <div className="relative flex gap-[56px] items-start max-w-[1200px] mx-auto">
           {/* LEFT: sticky video */}
           <div className="shrink-0" style={{ position: "sticky", top: "calc(50vh - 210px)" }}>
             <video
