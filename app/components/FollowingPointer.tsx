@@ -73,7 +73,7 @@ export default function FollowingPointer() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 z-50 pointer-events-none"
+      className="fixed top-0 left-0 z-[9999] pointer-events-none"
       style={{ x: springX, y: springY }}
       animate={{ opacity: visible ? 1 : 0, scale: visible ? 1 : 0.8 }}
       transition={{ type: "spring", stiffness: 400, damping: 25 }}
