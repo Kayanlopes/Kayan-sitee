@@ -186,7 +186,7 @@ export default function Home() {
 
             {/* Parágrafo 1 */}
             <p className="font-poppins font-light text-[18px] text-[#8d8d8d] leading-[28px] text-justify mb-[39px]">
-              <TextAnimate text="Olá! Meu nome é Kayan, Sou" delay={0} staggerDelay={0.03} />
+              <TextAnimate text="Olá! Meu nome é Kayan, sou" delay={0} staggerDelay={0.03} />
               {" "}
               <TextAnimate text="Product Designer" delay={0.18} staggerDelay={0.03} className="font-semibold" />
               {" "}
