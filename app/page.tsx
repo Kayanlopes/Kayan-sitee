@@ -163,14 +163,14 @@ export default function Home() {
       <section id="sobre" className="relative w-full bg-[#0a0a0a] py-[120px] px-14">
         <div className="flex gap-[56px] items-start">
           {/* LEFT: sticky video */}
-          <div className="shrink-0" style={{ position: "sticky", top: "15vh" }}>
+          <div className="shrink-0" style={{ position: "sticky", top: "50%", transform: "translateY(-50%)" }}>
             <video
               src="/about-video.mp4"
               autoPlay
               muted
               loop
               playsInline
-              className="w-[420px] h-[420px] rounded-2xl object-cover"
+              className="w-[420px] h-[420px] rounded-[16px] object-cover"
             />
           </div>
 
@@ -179,12 +179,12 @@ export default function Home() {
             <div className="mb-[29px]">
               <TextGenerateEffect
                 text="Sobre"
-                className="font-poppins font-light text-[40px] leading-[121%] text-[#8d8d8d]"
+                className="font-poppins font-light text-[32px] leading-[121%] text-[#8d8d8d]"
               />
             </div>
 
             {/* Parágrafo 1 */}
-            <p className="font-poppins font-light text-[18px] text-[#8d8d8d] leading-[121%] text-justify mb-[39px]">
+            <p className="font-poppins font-light text-[40px] text-[#8d8d8d] leading-[1.3] text-justify mb-[39px]">
               <TextAnimate text="Olá! Meu nome é Kayan, Sou" delay={0} staggerDelay={0.03} />
               {" "}
               <TextAnimate text="Product Designer" delay={0.18} staggerDelay={0.03} className="font-semibold" />
@@ -197,18 +197,18 @@ export default function Home() {
             </p>
 
             {/* Parágrafo 2 */}
-            <p className="font-poppins font-light text-[18px] text-[#8d8d8d] leading-[121%] text-justify">
+            <p className="font-poppins font-light text-[40px] text-[#8d8d8d] leading-[1.3] text-justify">
               <TextAnimate
                 text="Gosto de resolver problemas complexos, colaborar com times multidisciplinares e tomar decisões baseadas em evidências. Já contribuí para projetos de alto impacto, incluindo uma solução voltada à mitigação de um prejuízo anual estimado em"
                 delay={0}
                 staggerDelay={0.03}
               />
               {" "}
-              <TextAnimate text="R$ 20 milhões" delay={1.02} staggerDelay={0.03} className="font-semibold" />
+              <TextAnimate text="R$ 20 milhões" delay={1.02} staggerDelay={0.03} className="font-semibold text-[#fa7548]" />
               {" "}
               <TextAnimate text="e uma automação que" delay={1.11} staggerDelay={0.03} />
               {" "}
-              <TextAnimate text="reduziu em 67%" delay={1.23} staggerDelay={0.03} className="font-semibold" />
+              <TextAnimate text="reduziu em 67%" delay={1.23} staggerDelay={0.03} className="font-semibold text-[#fa7548]" />
               {" "}
               <TextAnimate text="o tempo de documentação de bugs." delay={1.32} staggerDelay={0.03} />
             </p>
