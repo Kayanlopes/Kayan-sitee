@@ -161,7 +161,7 @@ export default function Home() {
 
       {/* SOBRE */}
       <section id="sobre" className="relative w-full bg-[#0a0a0a] py-[120px] px-14">
-        <div className="flex gap-[56px] items-start">
+        <div className="flex gap-[56px] items-start max-w-[1200px] mx-auto">
           {/* LEFT: sticky video */}
           <div className="shrink-0" style={{ position: "sticky", top: "50%", transform: "translateY(-50%)" }}>
             <video
@@ -175,7 +175,7 @@ export default function Home() {
           </div>
 
           {/* RIGHT: text content */}
-          <div className="max-w-[520px] flex flex-col">
+          <div className="flex-1 flex flex-col">
             <div className="mb-[29px]">
               <TextGenerateEffect
                 text="Sobre"
@@ -184,7 +184,7 @@ export default function Home() {
             </div>
 
             {/* Parágrafo 1 */}
-            <p className="font-poppins font-light text-[40px] text-[#8d8d8d] leading-[1.3] text-justify mb-[39px]">
+            <p className="font-poppins font-light text-[18px] text-[#8d8d8d] leading-[28px] text-justify mb-[39px]">
               <TextAnimate text="Olá! Meu nome é Kayan, Sou" delay={0} staggerDelay={0.03} />
               {" "}
               <TextAnimate text="Product Designer" delay={0.18} staggerDelay={0.03} className="font-semibold" />
@@ -197,7 +197,7 @@ export default function Home() {
             </p>
 
             {/* Parágrafo 2 */}
-            <p className="font-poppins font-light text-[40px] text-[#8d8d8d] leading-[1.3] text-justify">
+            <p className="font-poppins font-light text-[18px] text-[#8d8d8d] leading-[28px] text-justify">
               <TextAnimate
                 text="Gosto de resolver problemas complexos, colaborar com times multidisciplinares e tomar decisões baseadas em evidências. Já contribuí para projetos de alto impacto, incluindo uma solução voltada à mitigação de um prejuízo anual estimado em"
                 delay={0}
