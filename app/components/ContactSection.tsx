@@ -47,9 +47,10 @@ export default function ContactSection() {
               <Image
                 src="/contact-photo.jpg"
                 alt="Kayan Cassariego"
-                width={64}
-                height={64}
-                className="w-16 h-16 rounded-full object-cover shrink-0"
+                width={128}
+                height={128}
+                quality={90}
+                className="w-32 h-32 rounded-full object-cover shrink-0"
               />
               <h2 className="font-poppins font-semibold text-[36px] leading-tight text-white max-w-[500px]">
                 Entre em contato, vamos trabalhar em seu projeto

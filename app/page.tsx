@@ -44,6 +44,12 @@ export default function Home() {
               Sobre
             </a>
             <a
+              href="#depoimentos"
+              className="font-overused text-[16px] leading-[18px] text-[#b9b9b9] border border-[#878787] rounded-full px-3 py-2 hover:text-white hover:border-white transition-colors"
+            >
+              Depoimentos
+            </a>
+            <a
               href="#contato"
               className="font-overused text-[16px] leading-[18px] text-[#b9b9b9] border border-[#878787] rounded-full px-3 py-2 hover:text-white hover:border-white transition-colors"
             >
