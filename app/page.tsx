@@ -8,6 +8,7 @@ import FollowingPointer from "./components/FollowingPointer";
 import FloatingDock from "./components/FloatingDock";
 import StackedCards from "./components/StackedCards";
 import TestimonialsSection from "./components/TestimonialsSection";
+import ContactSection from "./components/ContactSection";
 import TextAnimate from "./components/TextAnimate";
 import TextGenerateEffect from "./components/TextGenerateEffect";
 
@@ -242,6 +243,8 @@ export default function Home() {
       </section>
 
       <TestimonialsSection />
+
+      <ContactSection />
     </>
   );
 }
