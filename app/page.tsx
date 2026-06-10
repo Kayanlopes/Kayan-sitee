@@ -163,7 +163,7 @@ export default function Home() {
       <section id="sobre" className="relative w-full bg-[#0a0a0a] py-[120px] px-14">
         <div className="flex gap-[56px] items-start max-w-[1200px] mx-auto">
           {/* LEFT: sticky video */}
-          <div className="shrink-0" style={{ position: "sticky", top: "50%", transform: "translateY(-50%)" }}>
+          <div className="shrink-0" style={{ position: "sticky", top: "calc(50vh - 210px)" }}>
             <video
               src="/about-video.mp4"
               autoPlay
