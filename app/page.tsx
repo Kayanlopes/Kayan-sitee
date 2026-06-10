@@ -161,21 +161,21 @@ export default function Home() {
 
       {/* SOBRE */}
       <section id="sobre" className="relative w-full bg-[#0a0a0a] py-[120px] px-14">
-        <div className="flex gap-10 items-start">
+        <div className="flex gap-[56px] items-start">
           {/* LEFT: sticky video */}
-          <div className="shrink-0" style={{ position: "sticky", top: "calc(50vh - 240px)" }}>
+          <div className="shrink-0" style={{ position: "sticky", top: "15vh" }}>
             <video
               src="/about-video.mp4"
               autoPlay
               muted
               loop
               playsInline
-              className="w-[492px] h-[492px] rounded-2xl object-cover"
+              className="w-[420px] h-[420px] rounded-2xl object-cover"
             />
           </div>
 
           {/* RIGHT: text content */}
-          <div className="flex-1 flex flex-col">
+          <div className="max-w-[520px] flex flex-col">
             <div className="mb-[29px]">
               <TextGenerateEffect
                 text="Sobre"
@@ -184,7 +184,7 @@ export default function Home() {
             </div>
 
             {/* Parágrafo 1 */}
-            <p className="font-poppins font-light text-[32px] text-[#8d8d8d] leading-[121%] text-justify mb-[39px]">
+            <p className="font-poppins font-light text-[18px] text-[#8d8d8d] leading-[121%] text-justify mb-[39px]">
               <TextAnimate text="Olá! Meu nome é Kayan, Sou" delay={0} staggerDelay={0.03} />
               {" "}
               <TextAnimate text="Product Designer" delay={0.18} staggerDelay={0.03} className="font-semibold" />
@@ -197,7 +197,7 @@ export default function Home() {
             </p>
 
             {/* Parágrafo 2 */}
-            <p className="font-poppins font-light text-[32px] text-[#8d8d8d] leading-[121%] text-justify">
+            <p className="font-poppins font-light text-[18px] text-[#8d8d8d] leading-[121%] text-justify">
               <TextAnimate
                 text="Gosto de resolver problemas complexos, colaborar com times multidisciplinares e tomar decisões baseadas em evidências. Já contribuí para projetos de alto impacto, incluindo uma solução voltada à mitigação de um prejuízo anual estimado em"
                 delay={0}
