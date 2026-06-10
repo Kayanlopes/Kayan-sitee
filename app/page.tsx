@@ -5,6 +5,7 @@ import InteractiveGridPattern from "./components/InteractiveGridPattern";
 import HoverBorderGradient from "./components/HoverBorderGradient";
 import NoiseBackground from "./components/NoiseBackground";
 import FollowingPointer from "./components/FollowingPointer";
+import FloatingDock from "./components/FloatingDock";
 import StackedCards from "./components/StackedCards";
 import TextAnimate from "./components/TextAnimate";
 import TextGenerateEffect from "./components/TextGenerateEffect";
@@ -14,6 +15,7 @@ export default function Home() {
     <>
       <FollowingPointer />
       <SplashScreen />
+      <FloatingDock />
       {/* FIRST SECTION */}
       <section className="relative h-screen w-full overflow-visible px-14 pt-14 pb-14 flex flex-col">
         <InteractiveGridPattern />
