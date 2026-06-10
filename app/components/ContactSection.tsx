@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight, ArrowUp, Mail } from "lucide-react";
+import { ArrowUp, ArrowUpRight, Mail } from "lucide-react";
+import HoverBorderGradient from "./HoverBorderGradient";
 
 const WHATSAPP_HREF =
   "https://wa.me/554898674784?text=Ol%C3%A1%20Kayan,%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto.";
@@ -36,7 +37,7 @@ export default function ContactSection() {
   return (
     <>
       {/* CONTATO */}
-      <section id="contato" className="relative w-full bg-[#0a0a0a] py-[120px] px-14">
+      <section id="contato" className="relative w-full bg-[#111111] py-[120px] px-14">
         <div className="dots-bg absolute inset-0 pointer-events-none" />
 
         <div className="relative flex justify-between gap-10 max-w-[1200px] mx-auto">
@@ -44,7 +45,7 @@ export default function ContactSection() {
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-4">
               <Image
-                src="/avatar.png"
+                src="/contact-photo.jpg"
                 alt="Kayan Cassariego"
                 width={64}
                 height={64}
@@ -60,16 +61,22 @@ export default function ContactSection() {
           </div>
 
           {/* RIGHT */}
-          <div className="flex flex-col items-end gap-4 shrink-0">
-            <a
+          <div className="flex flex-col items-start gap-4 shrink-0">
+            <HoverBorderGradient
+              as="a"
               href={WHATSAPP_HREF}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-lg bg-[#fa7548] px-8 py-4 font-overused font-bold text-[16px] text-white hover:opacity-90 transition-opacity"
+              containerClassName="w-[230px]"
+              className="gap-2.5 pl-6 pr-1 py-1"
             >
-              ENTRAR EM CONTATO
-              <ArrowRight className="w-5 h-5" />
-            </a>
+              <span className="font-overused text-[16px] leading-[24px] text-[#b9b9b9] flex-1">
+                Entre em contato
+              </span>
+              <span className="bg-[#1e1e1e] rounded-full p-[6.4px] flex items-center justify-center">
+                <ArrowUpRight className="w-[19.2px] h-[19.2px] text-[#b9b9b9]" />
+              </span>
+            </HoverBorderGradient>
 
             <a
               href="mailto:kayan.cassariego@gmail.com"
