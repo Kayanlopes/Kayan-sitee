@@ -18,10 +18,11 @@ export default function Home() {
       <section className="relative h-screen w-full overflow-visible px-14 pt-14 pb-14 flex flex-col">
         <InteractiveGridPattern />
 
-        {/* DECORATIVE LINES */}
-        <div className="absolute left-8 top-0 w-px pointer-events-none" style={{ height: "100vh", backgroundColor: "rgba(255,255,255,0.08)" }} />
-        <div className="absolute right-8 top-0 w-px pointer-events-none" style={{ height: "100vh", backgroundColor: "rgba(255,255,255,0.08)" }} />
-        <div className="absolute top-[30px] left-8 right-8 h-px pointer-events-none" style={{ backgroundColor: "rgba(255,255,255,0.08)" }} />
+        {/* BOTTOM FADE */}
+        <div
+          className="absolute bottom-0 left-0 right-0 pointer-events-none"
+          style={{ height: "200px", background: "linear-gradient(to bottom, transparent, #0a0a0a)", zIndex: 5 }}
+        />
 
         {/* NAV */}
         <nav className="relative z-10 flex items-center justify-between">

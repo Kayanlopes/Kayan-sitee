@@ -165,7 +165,7 @@ export default function StackedCards() {
     <section
       ref={ref}
       id="projetos"
-      className="relative bg-[#0a0a0a]"
+      className="relative bg-[#0a0a0a] mt-[100px]"
       style={{ height: `${N * 100}vh` }}
     >
       {CARDS.map((card, i) => (
