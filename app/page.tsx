@@ -7,6 +7,7 @@ import NoiseBackground from "./components/NoiseBackground";
 import FollowingPointer from "./components/FollowingPointer";
 import FloatingDock from "./components/FloatingDock";
 import StackedCards from "./components/StackedCards";
+import TestimonialsSection from "./components/TestimonialsSection";
 import TextAnimate from "./components/TextAnimate";
 import TextGenerateEffect from "./components/TextGenerateEffect";
 
@@ -237,6 +238,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <TestimonialsSection />
     </>
   );
 }
