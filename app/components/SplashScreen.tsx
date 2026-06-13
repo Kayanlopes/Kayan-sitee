@@ -9,6 +9,11 @@ export default function SplashScreen() {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+    window.scrollTo(0, 0);
+
     const timer = setTimeout(() => setVisible(false), DISPLAY_DURATION);
     return () => clearTimeout(timer);
   }, []);
