@@ -15,7 +15,7 @@ const CARDS = [
   },
   {
     title: "NTX Bank",
-    slug: null,
+    slug: "ntx-bank",
     description:
       "Experiência de banco digital moderna, focada em acessibilidade e clareza para usuários do dia a dia.",
     tags: ["Product Design", "Design System"],
@@ -23,7 +23,7 @@ const CARDS = [
   },
   {
     title: "SPA AI Assistant",
-    slug: null,
+    slug: "spa-ai-assistant",
     description:
       "Assistente de IA para o ecossistema Microsoft, integrado nativamente ao fluxo de trabalho dos usuários.",
     tags: ["UI Design", "AI"],
@@ -31,7 +31,7 @@ const CARDS = [
   },
   {
     title: "Prolog App",
-    slug: null,
+    slug: "prolog-app",
     description:
       "Plataforma de checklist operacional que garante conformidade e rastreabilidade em ambientes industriais.",
     tags: ["Product Design", "Design System"],
