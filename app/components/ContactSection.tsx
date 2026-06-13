@@ -47,7 +47,8 @@ export default function ContactSection() {
                 alt="Kayan Cassariego"
                 width={128}
                 height={128}
-                quality={90}
+                quality={100}
+                unoptimized
                 className="w-32 h-32 rounded-full object-cover shrink-0"
               />
               <h2 className="font-poppins font-semibold text-[36px] leading-tight text-white max-w-[500px]">
