@@ -172,6 +172,66 @@ function CardItem({
   );
 }
 
+function MobileCardItem({ card, index }: { card: (typeof CARDS)[number]; index: number }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const { triggerTransition } = usePageTransition();
+
+  const handleViewProject = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+    e.preventDefault();
+    const rect = cardRef.current?.getBoundingClientRect();
+    if (rect) triggerTransition(card.slug, rect);
+  };
+
+  return (
+    <motion.div
+      ref={cardRef}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.5 }}
+      className="w-full bg-[#141414] rounded-2xl overflow-hidden"
+      style={{ border: "1px solid rgba(255,255,255,0.08)" }}
+    >
+      <div className={`h-[160px] bg-[#1a1a1a] bg-gradient-to-br ${card.gradient}`} />
+
+      <div className="flex flex-col gap-4 p-6">
+        <span className="font-overused text-[12px] text-[#555] tracking-widest">
+          0{index + 1}
+        </span>
+        <h2 className="font-poppins font-extrabold text-[24px] leading-none text-white">
+          {card.title}
+        </h2>
+        <p className="font-overused text-[14px] leading-relaxed text-[#b9b9b9]">
+          {card.description}
+        </p>
+
+        <div className="flex items-center justify-between flex-wrap gap-3">
+          <div className="flex gap-2 flex-wrap">
+            {card.tags.map((tag) => (
+              <span
+                key={tag}
+                className="font-overused text-[12px] text-[#878787] rounded-full px-3 py-1"
+                style={{ border: "1px solid rgba(255,255,255,0.1)" }}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+          <Link
+            href={`/projetos/${card.slug}`}
+            onClick={handleViewProject}
+            className="flex items-center gap-2 border border-[#878787] rounded-full px-4 py-2 font-overused text-[13px] text-[#b9b9b9] hover:border-white hover:text-white transition-colors"
+          >
+            Ver projeto
+            <ArrowUpRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 export default function StackedCards() {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
@@ -180,17 +240,30 @@ export default function StackedCards() {
   });
 
   return (
-    <section
-      ref={ref}
-      id="projetos"
-      className="relative bg-[#0a0a0a] mt-[100px]"
-      style={{ height: `${N * 100}vh` }}
-    >
-      <div className="dots-bg absolute inset-0 pointer-events-none" />
+    <div id="projetos">
+      {/* Desktop: scroll-driven stacked cards */}
+      <section
+        ref={ref}
+        className="relative hidden md:block bg-[#0a0a0a] mt-[100px]"
+        style={{ height: `${N * 100}vh` }}
+      >
+        <div className="dots-bg absolute inset-0 pointer-events-none" />
 
-      {CARDS.map((card, i) => (
-        <CardItem key={i} card={card} index={i} scrollYProgress={scrollYProgress} />
-      ))}
-    </section>
+        {CARDS.map((card, i) => (
+          <CardItem key={i} card={card} index={i} scrollYProgress={scrollYProgress} />
+        ))}
+      </section>
+
+      {/* Mobile: vertical card list */}
+      <section className="relative md:hidden bg-[#0a0a0a] mt-16 py-16 px-5">
+        <div className="dots-bg absolute inset-0 pointer-events-none" />
+
+        <div className="relative flex flex-col gap-6">
+          {CARDS.map((card, i) => (
+            <MobileCardItem key={i} card={card} index={i} />
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }

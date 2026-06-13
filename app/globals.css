@@ -1,11 +1,13 @@
 @import "tailwindcss";
 
-* {
-  cursor: none;
-}
+@media (pointer: fine) {
+  * {
+    cursor: none;
+  }
 
-a, button, [role="button"] {
-  cursor: none;
+  a, button, [role="button"] {
+    cursor: none;
+  }
 }
 
 body {
@@ -31,7 +33,7 @@ body {
 }
 
 .dots-bg {
-  background-image: radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(255,255,255,0.10) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 

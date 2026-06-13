@@ -51,21 +51,9 @@ const TESTIMONIALS: Testimonial[] = [
   },
 ];
 
-function TestimonialCard({ testimonial, index }: { testimonial: Testimonial; index: number }) {
+function TestimonialCardContent({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <motion.div
-      drag
-      dragConstraints={{ top: -100, left: -100, right: 100, bottom: 100 }}
-      dragElastic={0.2}
-      initial={{ opacity: 0, y: 40, rotate: 0 }}
-      whileInView={{ opacity: 1, y: 0, rotate: testimonial.rotate }}
-      viewport={{ once: true, amount: 0.4 }}
-      whileHover={{ scale: 1.05, rotate: 0, zIndex: 20 }}
-      whileDrag={{ scale: 1.05, zIndex: 30 }}
-      transition={{ duration: 0.6, delay: index * 0.12, ease: "easeOut" }}
-      className={`absolute ${testimonial.position} w-full max-w-[min(360px,85vw)] rounded-xl bg-[#141414] p-6 shadow-xl`}
-      style={{ border: "1px solid rgba(255,255,255,0.08)" }}
-    >
+    <>
       <p className="font-overused text-[14px] leading-relaxed text-[#b9b9b9]">
         &ldquo;{testimonial.quote}&rdquo;
       </p>
@@ -89,17 +77,71 @@ function TestimonialCard({ testimonial, index }: { testimonial: Testimonial; ind
           </span>
         </div>
       </div>
+    </>
+  );
+}
+
+function TestimonialCard({ testimonial, index }: { testimonial: Testimonial; index: number }) {
+  return (
+    <motion.div
+      drag
+      dragConstraints={{ top: -100, left: -100, right: 100, bottom: 100 }}
+      dragElastic={0.2}
+      initial={{ opacity: 0, y: 40, rotate: 0 }}
+      whileInView={{ opacity: 1, y: 0, rotate: testimonial.rotate }}
+      viewport={{ once: true, amount: 0.4 }}
+      whileHover={{ scale: 1.05, rotate: 0, zIndex: 20 }}
+      whileDrag={{ scale: 1.05, zIndex: 30 }}
+      transition={{ duration: 0.6, delay: index * 0.12, ease: "easeOut" }}
+      className={`absolute ${testimonial.position} w-full max-w-[min(360px,85vw)] rounded-xl bg-[#141414] p-6 shadow-xl`}
+      style={{ border: "1px solid rgba(255,255,255,0.08)" }}
+    >
+      <TestimonialCardContent testimonial={testimonial} />
+    </motion.div>
+  );
+}
+
+function MobileTestimonialCard({ testimonial, index }: { testimonial: Testimonial; index: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.4 }}
+      transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
+      className="w-full rounded-xl bg-[#141414] p-6 shadow-xl"
+      style={{ border: "1px solid rgba(255,255,255,0.08)" }}
+    >
+      <TestimonialCardContent testimonial={testimonial} />
     </motion.div>
   );
 }
 
 export default function TestimonialsSection() {
   return (
-    <section id="depoimentos" className="relative w-full overflow-hidden bg-[#0a0a0a] py-[120px] px-14">
+    <section id="depoimentos" className="relative w-full overflow-hidden bg-[#0a0a0a] py-16 px-5 sm:px-8 md:py-[120px] md:px-14">
       {/* DOT PATTERN */}
       <div className="dots-bg absolute inset-0 pointer-events-none" />
 
-      <div className="relative mx-auto flex min-h-[600px] max-w-[1200px] items-center justify-center md:min-h-[700px]">
+      {/* MOBILE: vertical stack */}
+      <div className="relative flex flex-col items-center gap-8 md:hidden">
+        <div className="flex max-w-[480px] flex-col items-center px-4 text-center">
+          <h2 className="font-poppins text-[24px] font-semibold text-white">
+            O que dizem sobre mim
+          </h2>
+          <p className="font-overused mt-1 text-[14px] text-[#b9b9b9]">
+            Recomendações de colegas e líderes com quem trabalhei
+          </p>
+        </div>
+
+        <div className="flex w-full flex-col gap-6">
+          {TESTIMONIALS.map((testimonial, index) => (
+            <MobileTestimonialCard key={testimonial.name} testimonial={testimonial} index={index} />
+          ))}
+        </div>
+      </div>
+
+      {/* DESKTOP: overlapping draggable cards */}
+      <div className="relative mx-auto hidden min-h-[600px] max-w-[1200px] items-center justify-center md:flex md:min-h-[700px]">
         {/* TITLE */}
         <div className="relative z-0 flex max-w-[480px] flex-col items-center px-4 text-center pointer-events-none">
           <h2 className="font-poppins text-[32px] font-semibold text-white">

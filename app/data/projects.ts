@@ -55,7 +55,7 @@ export const projects: Project[] = [
     industry: "Recrutamento & Seleção",
     services: "Product Design, Design System",
     period: "2025",
-    accentColor: "#5A2FA6",
+    accentColor: "#8d8d8d",
     sections: [
       {
         type: "hero-image",

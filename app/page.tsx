@@ -20,7 +20,7 @@ export default function Home() {
       <SplashScreen />
       <FloatingDock />
       {/* FIRST SECTION */}
-      <section className="relative h-screen w-full overflow-visible px-14 pt-14 pb-14 flex flex-col">
+      <section className="relative min-h-screen w-full overflow-visible px-5 pt-6 pb-10 flex flex-col sm:px-8 sm:pt-10 md:h-screen md:px-14 md:pt-14 md:pb-14">
         <BackgroundRipple />
 
         {/* BOTTOM FADE */}
@@ -30,34 +30,34 @@ export default function Home() {
         />
 
         {/* NAV */}
-        <nav className="relative z-10 flex items-center justify-between pointer-events-none">
-          <div className="flex items-center gap-2 pointer-events-auto">
+        <nav className="relative z-10 flex flex-wrap items-center justify-between gap-y-2 pointer-events-none">
+          <div className="flex items-center gap-1.5 sm:gap-2 pointer-events-auto">
             <a
               href="#projetos"
-              className="font-overused text-[16px] leading-[18px] text-[#fa7548] border border-[#fa7548] rounded-full px-3 py-2 hover:bg-[#fa7548]/10 transition-colors"
+              className="font-overused text-[12px] sm:text-[14px] md:text-[16px] leading-[18px] text-[#fa7548] border border-[#fa7548] rounded-full px-2.5 py-1.5 md:px-3 md:py-2 hover:bg-[#fa7548]/10 transition-colors"
             >
               Projetos
             </a>
             <a
               href="#sobre"
-              className="font-overused text-[16px] leading-[18px] text-[#b9b9b9] border border-[#878787] rounded-full px-3 py-2 hover:text-white hover:border-white transition-colors"
+              className="font-overused text-[12px] sm:text-[14px] md:text-[16px] leading-[18px] text-[#b9b9b9] border border-[#878787] rounded-full px-2.5 py-1.5 md:px-3 md:py-2 hover:text-white hover:border-white transition-colors"
             >
               Sobre
             </a>
             <a
               href="#depoimentos"
-              className="font-overused text-[16px] leading-[18px] text-[#b9b9b9] border border-[#878787] rounded-full px-3 py-2 hover:text-white hover:border-white transition-colors"
+              className="font-overused text-[12px] sm:text-[14px] md:text-[16px] leading-[18px] text-[#b9b9b9] border border-[#878787] rounded-full px-2.5 py-1.5 md:px-3 md:py-2 hover:text-white hover:border-white transition-colors"
             >
               Depoimentos
             </a>
             <a
               href="#contato"
-              className="font-overused text-[16px] leading-[18px] text-[#b9b9b9] border border-[#878787] rounded-full px-3 py-2 hover:text-white hover:border-white transition-colors"
+              className="font-overused text-[12px] sm:text-[14px] md:text-[16px] leading-[18px] text-[#b9b9b9] border border-[#878787] rounded-full px-2.5 py-1.5 md:px-3 md:py-2 hover:text-white hover:border-white transition-colors"
             >
               Contato
             </a>
           </div>
-          <div className="flex items-center gap-2 ml-auto pointer-events-auto">
+          <div className="hidden md:flex items-center gap-2 ml-auto pointer-events-auto">
             <Image
               src="/avatar.png"
               alt="Kayan Cassariego"
@@ -65,7 +65,7 @@ export default function Home() {
               height={32}
               className="rounded-full object-cover"
             />
-            <span className="font-overused text-[16px] text-[#b9b9b9]">Product Designer Pleno</span>
+            <span className="hidden md:inline font-overused text-[16px] text-[#b9b9b9]">Product Designer Pleno</span>
             <a
               href="https://www.linkedin.com/in/kayan-cassariego-ux-ui-product-designer/"
               target="_blank"
@@ -90,10 +90,10 @@ export default function Home() {
         </nav>
 
         {/* HERO CONTENT */}
-        <div className="relative z-10 flex flex-1 items-end justify-center gap-10 pointer-events-none">
+        <div className="relative z-10 flex flex-1 flex-col md:flex-row items-center md:items-end justify-center gap-8 md:gap-10 pointer-events-none mt-10 md:mt-0">
           {/* LEFT: Headline + CTA */}
-          <div className="flex-1 flex flex-col gap-8">
-            <h1 className="text-[40px] leading-[1.214] tracking-tight">
+          <div className="flex-1 flex flex-col gap-6 md:gap-8 w-full">
+            <h1 className="text-[28px] sm:text-[32px] md:text-[40px] leading-[1.214] tracking-tight">
               <span className="flex items-center gap-3">
                 <span className="font-poppins font-extrabold text-[#fa7548]">
                   <TextAnimate text="Transformando" delay={1.8} />
@@ -125,7 +125,7 @@ export default function Home() {
               href="https://wa.me/554898674784?text=Ol%C3%A1%20Kayan,%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
               target="_blank"
               rel="noopener noreferrer"
-              containerClassName="w-[230px] pointer-events-auto"
+              containerClassName="w-full max-w-[230px] pointer-events-auto"
               className="gap-2.5 pl-6 pr-1 py-1"
             >
               <span className="font-overused text-[16px] leading-[24px] text-[#b9b9b9] flex-1">
@@ -138,12 +138,12 @@ export default function Home() {
           </div>
 
           {/* RIGHT: Project card */}
-          <div className="shrink-0 flex flex-col gap-2.5 items-start justify-center">
-            <p className="font-poppins font-semibold text-[28.768px] leading-[0.81] text-[#b9b9b9]">
+          <div className="w-full md:w-auto md:shrink-0 flex flex-col gap-2.5 items-center md:items-start justify-center">
+            <p className="font-poppins font-semibold text-[22px] md:text-[28.768px] leading-[0.81] text-[#b9b9b9] text-center md:text-left">
               Projetos<br />facilitados
             </p>
             <NoiseBackground
-              containerClassName="w-[253px]"
+              containerClassName="w-full max-w-[253px] mx-auto md:mx-0"
               gradientColors={["#fa7548", "#7c3aed", "#1e1e1e"]}
               noiseIntensity={0.15}
             >
@@ -172,19 +172,19 @@ export default function Home() {
       <StackedCards />
 
       {/* SOBRE */}
-      <section id="sobre" className="relative w-full bg-[#0a0a0a] py-[120px] px-14">
+      <section id="sobre" className="relative w-full bg-[#0a0a0a] py-16 px-5 sm:px-8 md:py-[120px] md:px-14">
         <div className="dots-bg absolute inset-0 pointer-events-none" />
 
-        <div className="relative flex gap-[56px] items-start max-w-[1200px] mx-auto">
+        <div className="relative flex flex-col md:flex-row gap-10 md:gap-[56px] items-center md:items-start max-w-[1200px] mx-auto">
           {/* LEFT: sticky video */}
-          <div className="shrink-0" style={{ position: "sticky", top: "calc(50vh - 210px)" }}>
+          <div className="shrink-0 md:sticky md:top-[calc(50vh_-_210px)]">
             <video
               src="/about-video.mp4"
               autoPlay
               muted
               loop
               playsInline
-              className="w-[420px] h-[420px] rounded-[16px] object-cover"
+              className="w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] md:w-[420px] md:h-[420px] rounded-[16px] object-cover"
             />
           </div>
 
@@ -193,12 +193,12 @@ export default function Home() {
             <div className="mb-[29px]">
               <TextGenerateEffect
                 text="Sobre"
-                className="font-poppins font-light text-[32px] leading-[121%] text-[#8d8d8d]"
+                className="font-poppins font-light text-[24px] md:text-[32px] leading-[121%] text-[#8d8d8d]"
               />
             </div>
 
             {/* Parágrafo 1 */}
-            <p className="font-poppins font-light text-[18px] text-[#8d8d8d] leading-[28px] text-justify mb-[39px]">
+            <p className="font-poppins font-light text-[15px] sm:text-[16px] md:text-[18px] text-[#8d8d8d] leading-[24px] sm:leading-[26px] md:leading-[28px] text-justify mb-6 md:mb-[39px]">
               <TextAnimate text="Olá! Meu nome é Kayan, sou" delay={0} staggerDelay={0.03} />
               {" "}
               <TextAnimate text="Product Designer" delay={0.18} staggerDelay={0.03} className="font-semibold" />
@@ -212,7 +212,7 @@ export default function Home() {
 
             {/* Parágrafo 2 */}
             {/* Delays continuam o stagger do Parágrafo 1 (54 palavras * 0.03 = 1.62 de offset) */}
-            <p className="font-poppins font-light text-[18px] text-[#8d8d8d] leading-[28px] text-justify">
+            <p className="font-poppins font-light text-[15px] sm:text-[16px] md:text-[18px] text-[#8d8d8d] leading-[24px] sm:leading-[26px] md:leading-[28px] text-justify">
               <TextAnimate
                 text="Gosto de resolver problemas complexos, colaborar com times multidisciplinares e tomar decisões baseadas em evidências. Já contribuí para projetos de alto impacto, incluindo uma solução voltada à mitigação de um prejuízo anual estimado em"
                 delay={1.62}
@@ -229,13 +229,13 @@ export default function Home() {
             </p>
 
             {/* CTA */}
-            <div className="mt-[29px]">
+            <div className="mt-6 md:mt-[29px]">
               <HoverBorderGradient
                 as="a"
                 href="https://wa.me/554898674784?text=Ol%C3%A1%20Kayan,%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
                 target="_blank"
                 rel="noopener noreferrer"
-                containerClassName="w-[230px]"
+                containerClassName="w-full max-w-[230px]"
                 className="gap-2.5 pl-6 pr-1 py-1"
               >
                 <span className="font-overused text-[16px] leading-[24px] text-[#b9b9b9] flex-1">

@@ -35,7 +35,7 @@ function SectionBlock({
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="w-full aspect-[16/10] rounded-2xl bg-[#1e1e1e] my-16"
+          className="w-full aspect-[16/10] rounded-2xl bg-[#1e1e1e] my-10 md:my-16"
         />
       );
 
@@ -46,12 +46,12 @@ function SectionBlock({
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-[800px] mx-auto mb-24"
+          className="max-w-[800px] mx-auto mb-16 md:mb-24"
         >
-          <h2 className="font-poppins font-semibold text-[24px] mb-4" style={{ color: accentColor }}>
+          <h2 className="font-poppins font-semibold text-[20px] md:text-[24px] mb-4" style={{ color: accentColor }}>
             {section.title}
           </h2>
-          <p className="font-overused text-[18px] text-[#b9b9b9] leading-relaxed text-justify">
+          <p className="font-overused text-[15px] md:text-[18px] text-[#b9b9b9] leading-relaxed text-justify">
             {section.content}
           </p>
         </motion.div>
@@ -64,7 +64,7 @@ function SectionBlock({
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-24"
+          className="mb-16 md:mb-24"
         >
           <div className="w-full aspect-[16/10] rounded-xl bg-[#1e1e1e]" />
           {section.caption && (
@@ -75,9 +75,9 @@ function SectionBlock({
 
     case "three-columns":
       return (
-        <div className="mb-24">
-          <h2 className="font-poppins font-semibold text-[24px] text-white mb-8">{section.title}</h2>
-          <div className="flex gap-6">
+        <div className="mb-16 md:mb-24">
+          <h2 className="font-poppins font-semibold text-[20px] md:text-[24px] text-white mb-6 md:mb-8">{section.title}</h2>
+          <div className="flex flex-col md:flex-row gap-6">
             {section.items.map((item, i) => (
               <motion.div
                 key={item.title}
@@ -85,7 +85,7 @@ function SectionBlock({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.15 }}
-                className="flex-1 rounded-xl p-8 bg-[#141414]"
+                className="flex-1 rounded-xl p-6 md:p-8 bg-[#141414]"
                 style={{ border: "1px solid rgba(255,255,255,0.08)" }}
               >
                 <h3 className="font-overused font-bold text-[18px] text-white mb-2">{item.title}</h3>
@@ -98,9 +98,9 @@ function SectionBlock({
 
     case "image-grid":
       return (
-        <div className="mb-24">
-          <h2 className="font-poppins font-semibold text-[24px] text-white mb-8">{section.title}</h2>
-          <div className="grid grid-cols-2 gap-4">
+        <div className="mb-16 md:mb-24">
+          <h2 className="font-poppins font-semibold text-[20px] md:text-[24px] text-white mb-6 md:mb-8">{section.title}</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {section.images.map((_, i) => (
               <motion.div
                 key={i}
@@ -149,7 +149,7 @@ export default function ProjectPage() {
       >
         <div className="dots-bg absolute inset-0 pointer-events-none" />
 
-        <div className="relative max-w-[960px] mx-auto px-14 py-24">
+        <div className="relative max-w-[960px] mx-auto px-5 sm:px-8 md:px-14 py-16 md:py-24">
           {/* BREADCRUMB */}
           <p
             className="font-overused text-[14px] uppercase text-[#737373] text-center mb-6"
@@ -159,18 +159,18 @@ export default function ProjectPage() {
           </p>
 
           {/* TÍTULO */}
-          <h1 className="font-poppins font-semibold text-[48px] leading-tight text-white max-w-[800px] mx-auto text-center mb-12">
+          <h1 className="font-poppins font-semibold text-[32px] sm:text-[40px] md:text-[48px] leading-tight text-white max-w-[800px] mx-auto text-center mb-8 md:mb-12">
             <TextAnimate text={project.title} staggerDelay={0.04} />
           </h1>
 
           {/* METADADOS */}
-          <div className="flex items-center justify-center gap-10">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 md:gap-10">
             <MetaItem label="Cliente" value={project.client} />
-            <div className="w-px h-10 bg-[rgba(255,255,255,0.1)]" />
+            <div className="hidden sm:block w-px h-10 bg-[rgba(255,255,255,0.1)]" />
             <MetaItem label="Indústria" value={project.industry} />
-            <div className="w-px h-10 bg-[rgba(255,255,255,0.1)]" />
+            <div className="hidden sm:block w-px h-10 bg-[rgba(255,255,255,0.1)]" />
             <MetaItem label="Serviços" value={project.services} />
-            <div className="w-px h-10 bg-[rgba(255,255,255,0.1)]" />
+            <div className="hidden sm:block w-px h-10 bg-[rgba(255,255,255,0.1)]" />
             <MetaItem label="Período" value={project.period} />
           </div>
 
@@ -181,7 +181,7 @@ export default function ProjectPage() {
 
           {/* FOOTER */}
           {nextProject && (
-            <div className="mt-[120px] flex justify-center">
+            <div className="mt-16 md:mt-[120px] flex justify-center">
               <Link
                 href={`/projetos/${nextProject.slug}`}
                 className="font-overused text-[16px] text-[#b9b9b9] hover:text-white transition-colors flex items-center gap-2"

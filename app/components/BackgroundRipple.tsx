@@ -18,12 +18,21 @@ export default function BackgroundRipple() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [cols, setCols] = useState(0);
   const [cells, setCells] = useState<CellState[]>([]);
+  const [isMobile, setIsMobile] = useState(false);
   const colsRef = useRef(0);
   const triggerCounter = useRef(0);
 
   useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    setIsMobile(mq.matches);
+    const onChange = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
+  useEffect(() => {
     const el = containerRef.current;
-    if (!el) return;
+    if (!el || isMobile) return;
 
     const measure = () => {
       const r = el.getBoundingClientRect();
@@ -38,7 +47,7 @@ export default function BackgroundRipple() {
     const ro = new ResizeObserver(measure);
     ro.observe(el);
     return () => ro.disconnect();
-  }, []);
+  }, [isMobile]);
 
   const triggerRipple = useCallback((row: number, col: number) => {
     setCells((prev) => {
@@ -62,6 +71,10 @@ export default function BackgroundRipple() {
       return next;
     });
   }, []);
+
+  if (isMobile) {
+    return <div className="dots-bg absolute inset-0 z-0 pointer-events-none" />;
+  }
 
   return (
     <div

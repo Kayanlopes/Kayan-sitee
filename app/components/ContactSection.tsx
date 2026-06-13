@@ -37,8 +37,8 @@ export default function ContactSection() {
   return (
     <>
       {/* CONTATO */}
-      <section id="contato" className="relative w-full bg-[#111111] py-[120px] px-14">
-        <div className="relative flex justify-between gap-10 max-w-[1200px] mx-auto">
+      <section id="contato" className="relative w-full bg-[#111111] py-16 px-5 sm:px-8 md:py-[120px] md:px-14">
+        <div className="relative flex flex-col md:flex-row md:justify-between gap-8 md:gap-10 max-w-[1200px] mx-auto">
           {/* LEFT */}
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-4">
@@ -49,25 +49,25 @@ export default function ContactSection() {
                 height={128}
                 quality={100}
                 unoptimized
-                className="w-32 h-32 rounded-full object-cover shrink-0"
+                className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-full object-cover shrink-0"
               />
-              <h2 className="font-poppins font-semibold text-[36px] leading-tight text-white max-w-[500px]">
+              <h2 className="font-poppins font-semibold text-[22px] sm:text-[28px] md:text-[36px] leading-tight text-white max-w-[500px]">
                 Entre em contato, vamos trabalhar em seu projeto
               </h2>
             </div>
-            <p className="font-overused text-[16px] text-[#b9b9b9]">
+            <p className="font-overused text-[14px] md:text-[16px] text-[#b9b9b9]">
               Vamos criar juntos um produto digital com estratégia, pesquisa e craft refinado.
             </p>
           </div>
 
           {/* RIGHT */}
-          <div className="flex flex-col items-start gap-4 shrink-0">
+          <div className="flex flex-col items-start gap-4 w-full md:w-auto md:shrink-0">
             <HoverBorderGradient
               as="a"
               href={WHATSAPP_HREF}
               target="_blank"
               rel="noopener noreferrer"
-              containerClassName="w-[230px]"
+              containerClassName="w-full max-w-[230px]"
               className="gap-2.5 pl-6 pr-1 py-1"
             >
               <span className="font-overused text-[16px] leading-[24px] text-[#b9b9b9] flex-1">
@@ -119,7 +119,7 @@ export default function ContactSection() {
       </section>
 
       {/* FOOTER */}
-      <footer className="w-full bg-[#050505] border-t border-[rgba(255,255,255,0.06)] px-14 py-6">
+      <footer className="w-full bg-[#050505] border-t border-[rgba(255,255,255,0.06)] px-5 sm:px-8 md:px-14 py-4 md:py-6">
         <div className="flex items-center justify-between max-w-[1200px] mx-auto">
           <span className="font-overused text-[13px] text-[#737373]">
             Kayan Cassariego © 2026

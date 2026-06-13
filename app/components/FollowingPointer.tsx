@@ -25,6 +25,7 @@ export default function FollowingPointer() {
   const [visible, setVisible] = useState(false);
   const [clicking, setClicking] = useState(false);
   const [hovering, setHovering] = useState(false);
+  const [isTouch, setIsTouch] = useState(false);
   const clickTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const mouseX = useMotionValue(0);
@@ -33,6 +34,11 @@ export default function FollowingPointer() {
   const springY = useSpring(mouseY, { stiffness: 500, damping: 28 });
 
   useEffect(() => {
+    if (window.matchMedia("(pointer: coarse)").matches) {
+      setIsTouch(true);
+      return;
+    }
+
     const onMove = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
@@ -64,6 +70,8 @@ export default function FollowingPointer() {
       if (clickTimer.current) clearTimeout(clickTimer.current);
     };
   }, [mouseX, mouseY]);
+
+  if (isTouch) return null;
 
   const accentColor = "#fa7548";
   const iconColor = clicking ? "#ffffff" : accentColor;
