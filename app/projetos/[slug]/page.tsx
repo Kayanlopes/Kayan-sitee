@@ -8,6 +8,7 @@ import FollowingPointer from "@/app/components/FollowingPointer";
 import FloatingDock from "@/app/components/FloatingDock";
 import ProjectFloatingNav from "@/app/components/ProjectFloatingNav";
 import TextAnimate from "@/app/components/TextAnimate";
+import ContactSection from "@/app/components/ContactSection";
 import { projects, ProjectSection } from "@/app/data/projects";
 
 function MetaItem({ label, value }: { label: string; value: string }) {
@@ -192,6 +193,8 @@ export default function ProjectPage() {
           )}
         </div>
       </motion.main>
+
+      <ContactSection />
     </>
   );
 }
