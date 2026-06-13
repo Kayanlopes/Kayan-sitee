@@ -106,7 +106,7 @@ function DockIcon({ item, mouseX }: { item: DockItemData; mouseX: MotionValue<nu
   );
 }
 
-export default function FloatingDock() {
+export default function FloatingDock({ showHome = true }: { showHome?: boolean }) {
   const [visible, setVisible] = useState(false);
   const mouseX = useMotionValue(Infinity);
 
@@ -116,6 +116,8 @@ export default function FloatingDock() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const items = showHome ? ITEMS : ITEMS.filter((item) => item.label !== "Início");
 
   return (
     <motion.div
@@ -128,7 +130,7 @@ export default function FloatingDock() {
         visible ? "pointer-events-auto" : "pointer-events-none"
       }`}
     >
-      {ITEMS.map((item) => (
+      {items.map((item) => (
         <DockIcon key={item.label} item={item} mouseX={mouseX} />
       ))}
     </motion.div>

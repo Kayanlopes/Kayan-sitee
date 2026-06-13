@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import FollowingPointer from "@/app/components/FollowingPointer";
 import FloatingDock from "@/app/components/FloatingDock";
+import ProjectFloatingNav from "@/app/components/ProjectFloatingNav";
 import TextAnimate from "@/app/components/TextAnimate";
 import { projects, ProjectSection } from "@/app/data/projects";
 
@@ -136,7 +137,8 @@ export default function ProjectPage() {
   return (
     <>
       <FollowingPointer />
-      <FloatingDock />
+      <FloatingDock showHome={false} />
+      <ProjectFloatingNav />
 
       <motion.main
         className="relative w-full bg-[#0a0a0a]"
