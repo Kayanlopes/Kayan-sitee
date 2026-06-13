@@ -1,11 +1,13 @@
 "use client";
 import { useMemo, useRef } from "react";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
 
 const CARDS = [
   {
     title: "Webbie RH",
+    slug: "webbie-rh",
     description:
       "Plataforma de recrutamento impulsionada por IA que simplifica o processo de seleção para empresas de todos os tamanhos.",
     tags: ["Product Design", "AI"],
@@ -13,6 +15,7 @@ const CARDS = [
   },
   {
     title: "NTX Bank",
+    slug: null,
     description:
       "Experiência de banco digital moderna, focada em acessibilidade e clareza para usuários do dia a dia.",
     tags: ["Product Design", "Design System"],
@@ -20,6 +23,7 @@ const CARDS = [
   },
   {
     title: "SPA AI Assistant",
+    slug: null,
     description:
       "Assistente de IA para o ecossistema Microsoft, integrado nativamente ao fluxo de trabalho dos usuários.",
     tags: ["UI Design", "AI"],
@@ -27,6 +31,7 @@ const CARDS = [
   },
   {
     title: "Prolog App",
+    slug: null,
     description:
       "Plataforma de checklist operacional que garante conformidade e rastreabilidade em ambientes industriais.",
     tags: ["Product Design", "Design System"],
@@ -139,13 +144,13 @@ function CardItem({
                   </span>
                 ))}
               </div>
-              <a
-                href="#"
+              <Link
+                href={card.slug ? `/projetos/${card.slug}` : "#"}
                 className="flex items-center gap-2 border border-[#878787] rounded-full px-4 py-2 font-overused text-[13px] text-[#b9b9b9] hover:border-white hover:text-white transition-colors"
               >
                 Ver projeto
                 <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight, ExternalLink } from "lucide-react";
 import SplashScreen from "./components/SplashScreen";
 import BackgroundRipple from "./components/BackgroundRipple";
@@ -155,13 +156,13 @@ export default function Home() {
                 <span className="font-overused font-semibold text-[14px] text-white">
                   Webbie RH
                 </span>
-                <a
-                  href="#"
+                <Link
+                  href="/projetos/webbie-rh"
                   className="flex items-center gap-1.5 border border-[#878787] rounded-full px-2.5 py-1 text-[12px] text-[#b9b9b9] hover:border-white hover:text-white transition-colors pointer-events-auto"
                 >
                   Ver projeto
                   <ExternalLink className="w-3 h-3" />
-                </a>
+                </Link>
               </div>
             </NoiseBackground>
           </div>
