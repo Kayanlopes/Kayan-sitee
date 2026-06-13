@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import FollowingPointer from "@/app/components/FollowingPointer";
 import FloatingDock from "@/app/components/FloatingDock";
 import ProjectFloatingNav from "@/app/components/ProjectFloatingNav";
@@ -136,9 +136,9 @@ export default function ProjectPage() {
 
   return (
     <>
+      <ProjectFloatingNav />
       <FollowingPointer />
       <FloatingDock showHome={false} />
-      <ProjectFloatingNav />
 
       <motion.main
         className="relative w-full bg-[#0a0a0a]"
@@ -149,15 +149,6 @@ export default function ProjectPage() {
         <div className="dots-bg absolute inset-0 pointer-events-none" />
 
         <div className="relative max-w-[960px] mx-auto px-14 py-24">
-          {/* HEADER */}
-          <Link
-            href="/#projetos"
-            className="inline-flex items-center gap-2 font-overused text-[14px] text-[#b9b9b9] hover:text-white transition-colors mb-12"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Projetos
-          </Link>
-
           {/* BREADCRUMB */}
           <p
             className="font-overused text-[14px] uppercase text-[#737373] text-center mb-6"

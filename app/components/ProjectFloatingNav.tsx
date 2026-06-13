@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Home, Layers } from "lucide-react";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
-import { projects } from "@/app/data/projects";
 
 interface NavItem {
   name: string;
@@ -15,11 +14,10 @@ interface NavItem {
 
 const NAV_ITEMS: NavItem[] = [
   { name: "Home", link: "/", icon: <Home className="w-4 h-4" /> },
-  ...projects.map((project) => ({
-    name: project.project,
-    link: `/projetos/${project.slug}`,
-    icon: <Layers className="w-4 h-4" />,
-  })),
+  { name: "Webbie RH", link: "/projetos/webbie-rh", icon: <Layers className="w-4 h-4" /> },
+  { name: "NTX Bank", link: "/projetos/ntx-bank", icon: <Layers className="w-4 h-4" /> },
+  { name: "SPA AI Assistant", link: "/projetos/spa-ai-assistant", icon: <Layers className="w-4 h-4" /> },
+  { name: "Prolog App", link: "/projetos/prolog-app", icon: <Layers className="w-4 h-4" /> },
 ];
 
 export default function ProjectFloatingNav() {
