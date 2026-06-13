@@ -210,20 +210,21 @@ export default function Home() {
             </p>
 
             {/* Parágrafo 2 */}
+            {/* Delays continuam o stagger do Parágrafo 1 (54 palavras * 0.03 = 1.62 de offset) */}
             <p className="font-poppins font-light text-[18px] text-[#8d8d8d] leading-[28px] text-justify">
               <TextAnimate
                 text="Gosto de resolver problemas complexos, colaborar com times multidisciplinares e tomar decisões baseadas em evidências. Já contribuí para projetos de alto impacto, incluindo uma solução voltada à mitigação de um prejuízo anual estimado em"
-                delay={0}
+                delay={1.62}
                 staggerDelay={0.03}
               />
               {" "}
-              <TextAnimate text="R$ 20 milhões" delay={1.02} staggerDelay={0.03} className="font-semibold text-[#fa7548]" />
+              <TextAnimate text="R$ 20 milhões" delay={2.64} staggerDelay={0.03} className="font-semibold text-[#fa7548]" />
               {" "}
-              <TextAnimate text="e uma automação que" delay={1.11} staggerDelay={0.03} />
+              <TextAnimate text="e uma automação que" delay={2.73} staggerDelay={0.03} />
               {" "}
-              <TextAnimate text="reduziu em 67%" delay={1.23} staggerDelay={0.03} className="font-semibold text-[#fa7548]" />
+              <TextAnimate text="reduziu em 67%" delay={2.85} staggerDelay={0.03} className="font-semibold text-[#fa7548]" />
               {" "}
-              <TextAnimate text="o tempo de documentação de bugs." delay={1.32} staggerDelay={0.03} />
+              <TextAnimate text="o tempo de documentação de bugs." delay={2.94} staggerDelay={0.03} />
             </p>
 
             {/* CTA */}
