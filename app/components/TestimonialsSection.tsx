@@ -105,7 +105,7 @@ export default function TestimonialsSection() {
           <h2 className="font-poppins text-[32px] font-semibold text-white">
             O que dizem sobre mim
           </h2>
-          <p className="font-overused mt-3 text-[16px] text-[#b9b9b9]">
+          <p className="font-overused mt-1 text-[16px] text-[#b9b9b9]">
             Recomendações de colegas e líderes com quem trabalhei
           </p>
         </div>
