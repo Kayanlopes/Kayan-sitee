@@ -38,8 +38,6 @@ export default function ContactSection() {
     <>
       {/* CONTATO */}
       <section id="contato" className="relative w-full bg-[#111111] py-[120px] px-14">
-        <div className="dots-bg absolute inset-0 pointer-events-none" />
-
         <div className="relative flex justify-between gap-10 max-w-[1200px] mx-auto">
           {/* LEFT */}
           <div className="flex flex-col gap-4">
