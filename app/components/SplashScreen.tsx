@@ -2,12 +2,15 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
+const DISPLAY_DURATION = 1200;
+const EXIT_DURATION = 0.6;
+
 export default function SplashScreen() {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    const t = setTimeout(() => setVisible(false), 1500);
-    return () => clearTimeout(t);
+    const timer = setTimeout(() => setVisible(false), DISPLAY_DURATION);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -17,7 +20,7 @@ export default function SplashScreen() {
           className="fixed inset-0 z-50 flex items-center justify-center bg-[#fa7548]"
           initial={{ y: 0 }}
           exit={{ y: "-100%" }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
+          transition={{ duration: EXIT_DURATION, ease: "easeInOut" }}
         >
           <span className="font-poppins font-extrabold text-6xl text-[#0a0a0a]">KC</span>
         </motion.div>
