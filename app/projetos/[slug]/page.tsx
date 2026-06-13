@@ -138,7 +138,12 @@ export default function ProjectPage() {
       <FollowingPointer />
       <FloatingDock />
 
-      <main className="relative w-full bg-[#0a0a0a]">
+      <motion.main
+        className="relative w-full bg-[#0a0a0a]"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+      >
         <div className="dots-bg absolute inset-0 pointer-events-none" />
 
         <div className="relative max-w-[960px] mx-auto px-14 py-24">
@@ -193,7 +198,7 @@ export default function ProjectPage() {
             </div>
           )}
         </div>
-      </main>
+      </motion.main>
     </>
   );
 }

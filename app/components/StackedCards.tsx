@@ -3,6 +3,7 @@ import { useMemo, useRef } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
+import { usePageTransition } from "./PageTransition";
 
 const CARDS = [
   {
@@ -55,6 +56,16 @@ function CardItem({
   index: number;
   scrollYProgress: MotionValue<number>;
 }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const { triggerTransition } = usePageTransition();
+
+  const handleViewProject = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+    e.preventDefault();
+    const rect = cardRef.current?.getBoundingClientRect();
+    if (rect) triggerTransition(card.slug, rect);
+  };
+
   // Build keyframe ranges once per card (index never changes)
   const { ranges, scales, ys, opacities } = useMemo(() => {
     const ranges: number[] = [];
@@ -102,6 +113,7 @@ function CardItem({
       style={{ position: "sticky", top: STICKY_TOP, zIndex: index + 1 }}
     >
       <motion.div
+        ref={cardRef}
         className="w-full max-w-[1200px] bg-[#141414] rounded-2xl overflow-hidden"
         style={{
           scale,
@@ -146,6 +158,7 @@ function CardItem({
               </div>
               <Link
                 href={`/projetos/${card.slug}`}
+                onClick={handleViewProject}
                 className="flex items-center gap-2 border border-[#878787] rounded-full px-4 py-2 font-overused text-[13px] text-[#b9b9b9] hover:border-white hover:text-white transition-colors"
               >
                 Ver projeto
