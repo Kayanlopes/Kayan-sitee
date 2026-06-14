@@ -206,12 +206,12 @@ function MobileCardItem({ card, index }: { card: (typeof CARDS)[number]; index: 
           {card.description}
         </p>
 
-        <div className="flex items-center justify-between flex-wrap gap-3">
-          <div className="flex gap-2 flex-wrap">
+        <div className="flex flex-row items-center justify-between gap-2">
+          <div className="flex flex-1 min-w-0 flex-wrap gap-2">
             {card.tags.map((tag) => (
               <span
                 key={tag}
-                className="font-overused text-[12px] text-[#878787] rounded-full px-3 py-1"
+                className="font-overused text-[12px] text-[#878787] rounded-full px-3 py-1 whitespace-nowrap"
                 style={{ border: "1px solid rgba(255,255,255,0.1)" }}
               >
                 {tag}
@@ -221,7 +221,7 @@ function MobileCardItem({ card, index }: { card: (typeof CARDS)[number]; index: 
           <Link
             href={`/projetos/${card.slug}`}
             onClick={handleViewProject}
-            className="flex items-center gap-2 border border-[#878787] rounded-full px-4 py-2 font-overused text-[13px] text-[#b9b9b9] hover:border-white hover:text-white transition-colors"
+            className="flex shrink-0 items-center gap-2 border border-[#878787] rounded-full px-4 py-2 font-overused text-[13px] text-[#b9b9b9] hover:border-white hover:text-white transition-colors"
           >
             Ver projeto
             <ArrowUpRight className="w-3.5 h-3.5" />
@@ -255,7 +255,7 @@ export default function StackedCards() {
       </section>
 
       {/* Mobile: vertical card list */}
-      <section className="relative md:hidden bg-[#0a0a0a] mt-16 py-16 px-5">
+      <section className="relative md:hidden bg-[#0a0a0a] mt-6 py-16 px-5">
         <div className="dots-bg absolute inset-0 pointer-events-none" />
 
         <div className="relative flex flex-col gap-6">

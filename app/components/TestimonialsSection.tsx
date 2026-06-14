@@ -123,8 +123,8 @@ export default function TestimonialsSection() {
       <div className="dots-bg absolute inset-0 pointer-events-none" />
 
       {/* MOBILE: vertical stack */}
-      <div className="relative flex flex-col items-center gap-8 md:hidden">
-        <div className="flex max-w-[480px] flex-col items-center px-4 text-center">
+      <div className="relative flex flex-col items-start gap-8 md:hidden">
+        <div className="flex max-w-[480px] flex-col items-start px-4 text-left">
           <h2 className="font-poppins text-[24px] font-semibold text-white">
             O que dizem sobre mim
           </h2>

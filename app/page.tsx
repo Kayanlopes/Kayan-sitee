@@ -7,6 +7,7 @@ import HoverBorderGradient from "./components/HoverBorderGradient";
 import NoiseBackground from "./components/NoiseBackground";
 import FollowingPointer from "./components/FollowingPointer";
 import FloatingDock from "./components/FloatingDock";
+import MobileHeader from "./components/MobileHeader";
 import StackedCards from "./components/StackedCards";
 import TestimonialsSection from "./components/TestimonialsSection";
 import ContactSection from "./components/ContactSection";
@@ -19,8 +20,9 @@ export default function Home() {
       <FollowingPointer />
       <SplashScreen />
       <FloatingDock />
+      <MobileHeader />
       {/* FIRST SECTION */}
-      <section className="relative min-h-screen w-full overflow-visible px-5 pt-6 pb-10 flex flex-col sm:px-8 sm:pt-10 md:h-screen md:px-14 md:pt-14 md:pb-14">
+      <section className="relative w-full overflow-visible px-5 pt-20 pb-6 flex flex-col sm:px-8 sm:pt-20 md:min-h-screen md:h-screen md:px-14 md:pt-14 md:pb-14">
         <BackgroundRipple />
 
         {/* BOTTOM FADE */}
@@ -93,7 +95,30 @@ export default function Home() {
         <div className="relative z-10 flex flex-1 flex-col md:flex-row items-center md:items-end justify-center gap-8 md:gap-10 pointer-events-none mt-10 md:mt-0">
           {/* LEFT: Headline + CTA */}
           <div className="flex-1 flex flex-col gap-6 md:gap-8 w-full">
-            <h1 className="text-[28px] sm:text-[32px] md:text-[40px] leading-[1.214] tracking-tight">
+            {/* MOBILE: single flowing block, left-aligned */}
+            <h1 className="md:hidden text-[28px] sm:text-[32px] leading-[1.214] tracking-tight text-left">
+              <span className="font-poppins font-extrabold text-[#fa7548]">
+                <TextAnimate text="Transformando" delay={1.8} />
+              </span>{" "}
+              <span className="font-poppins font-semibold text-gradient">
+                <TextAnimate text="produtos" delay={1.85} />
+              </span>{" "}
+              <span className="font-poppins font-extrabold text-[#fa7548]">
+                <TextAnimate text="complexos" delay={1.9} />
+              </span>{" "}
+              <span className="font-poppins font-semibold text-gradient">
+                <TextAnimate text="em experiências claras," delay={1.95} />
+              </span>{" "}
+              <span className="font-poppins font-extrabold text-[#fa7548]">
+                <TextAnimate text="funcionais" delay={2.1} />
+              </span>{" "}
+              <span className="font-poppins font-semibold text-gradient">
+                <TextAnimate text="e escaláveis." delay={2.15} />
+              </span>
+            </h1>
+
+            {/* DESKTOP: multi-row layout */}
+            <h1 className="hidden md:block text-[28px] sm:text-[32px] md:text-[40px] leading-[1.214] tracking-tight">
               <span className="flex items-center gap-3">
                 <span className="font-poppins font-extrabold text-[#fa7548]">
                   <TextAnimate text="Transformando" delay={1.8} />
@@ -138,7 +163,7 @@ export default function Home() {
           </div>
 
           {/* RIGHT: Project card */}
-          <div className="w-full md:w-auto md:shrink-0 flex flex-col gap-2.5 items-center md:items-start justify-center">
+          <div className="hidden md:flex w-full md:w-auto md:shrink-0 flex-col gap-2.5 items-center md:items-start justify-center">
             <p className="font-poppins font-semibold text-[22px] md:text-[28.768px] leading-[0.81] text-[#b9b9b9] text-center md:text-left">
               Projetos<br />facilitados
             </p>
@@ -177,20 +202,20 @@ export default function Home() {
 
         <div className="relative flex flex-col md:flex-row gap-10 md:gap-[56px] items-center md:items-start max-w-[1200px] mx-auto">
           {/* LEFT: sticky video */}
-          <div className="shrink-0 md:sticky md:top-[calc(50vh_-_210px)]">
+          <div className="w-full md:w-auto shrink-0 md:sticky md:top-[calc(50vh_-_210px)]">
             <video
               src="/about-video.mp4"
               autoPlay
               muted
               loop
               playsInline
-              className="w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] md:w-[420px] md:h-[420px] rounded-[16px] object-cover"
+              className="w-full aspect-square md:w-[420px] md:h-[420px] rounded-[16px] object-cover"
             />
           </div>
 
           {/* RIGHT: text content */}
           <div className="flex-1 flex flex-col">
-            <div className="mb-[29px]">
+            <div className="mb-6 md:mb-[29px]">
               <TextGenerateEffect
                 text="Sobre"
                 className="font-poppins font-light text-[24px] md:text-[32px] leading-[121%] text-[#8d8d8d]"
@@ -219,7 +244,9 @@ export default function Home() {
                 staggerDelay={0.03}
               />
               {" "}
-              <TextAnimate text="R$ 20 milhões" delay={2.64} staggerDelay={0.03} className="font-semibold text-[#fa7548]" />
+              <span className="whitespace-nowrap font-bold text-[#fa7548]">
+                <TextAnimate text="R$ 20 milhões" delay={2.64} staggerDelay={0.03} />
+              </span>
               {" "}
               <TextAnimate text="e uma automação que" delay={2.73} staggerDelay={0.03} />
               {" "}

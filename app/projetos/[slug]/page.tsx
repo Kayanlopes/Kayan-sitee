@@ -7,6 +7,7 @@ import { ArrowRight } from "lucide-react";
 import FollowingPointer from "@/app/components/FollowingPointer";
 import FloatingDock from "@/app/components/FloatingDock";
 import ProjectFloatingNav from "@/app/components/ProjectFloatingNav";
+import MobileHeader from "@/app/components/MobileHeader";
 import TextAnimate from "@/app/components/TextAnimate";
 import ContactSection from "@/app/components/ContactSection";
 import { projects, ProjectSection } from "@/app/data/projects";
@@ -138,6 +139,7 @@ export default function ProjectPage() {
   return (
     <>
       <ProjectFloatingNav />
+      <MobileHeader />
       <FollowingPointer />
       <FloatingDock showHome={false} />
 

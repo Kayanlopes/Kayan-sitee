@@ -42,7 +42,7 @@ export default function ProjectFloatingNav() {
         initial={{ opacity: 1, y: 0 }}
         animate={{ y: visible ? 0 : -100, opacity: visible ? 1 : 0 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="fixed top-4 md:top-6 inset-x-0 mx-auto z-50 flex max-w-fit items-center gap-0.5 md:gap-1 rounded-full border border-[rgba(255,255,255,0.1)] bg-[rgba(20,20,20,0.8)] px-1.5 md:px-2 py-1.5 md:py-2 backdrop-blur-md"
+        className="fixed top-4 md:top-6 inset-x-0 mx-auto z-50 hidden md:flex max-w-fit items-center gap-0.5 md:gap-1 rounded-full border border-[rgba(255,255,255,0.1)] bg-[rgba(20,20,20,0.8)] px-1.5 md:px-2 py-1.5 md:py-2 backdrop-blur-md"
       >
         {NAV_ITEMS.map((item) => {
           const isActive = pathname === item.link;

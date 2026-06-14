@@ -126,7 +126,7 @@ export default function FloatingDock({ showHome = true }: { showHome?: boolean }
       initial={{ opacity: 0, y: 20, x: "-50%" }}
       animate={{ opacity: visible ? 1 : 0, y: visible ? 0 : 20, x: "-50%" }}
       transition={{ duration: 0.3 }}
-      className={`fixed bottom-4 md:bottom-6 left-1/2 z-50 flex items-center gap-1.5 md:gap-2 rounded-full border border-[rgba(255,255,255,0.1)] bg-[rgba(20,20,20,0.8)] px-3 py-1.5 md:px-4 md:py-2 backdrop-blur-md ${
+      className={`fixed bottom-4 md:bottom-6 left-1/2 z-50 hidden md:flex items-center gap-1.5 md:gap-2 rounded-full border border-[rgba(255,255,255,0.1)] bg-[rgba(20,20,20,0.8)] px-3 py-1.5 md:px-4 md:py-2 backdrop-blur-md ${
         visible ? "pointer-events-auto" : "pointer-events-none"
       }`}
     >
